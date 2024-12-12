@@ -35,28 +35,28 @@
 
       <div class="main">
         <div class="row">
-          <div class="col-md-6">
+          <div class="col-md-6" v-for="(movie, index) in movies"> 
             <div class="thumbnail">
-              <img class="poster img-fluid" />
-              <div class="imageInfo">{{ movies[0].posterindex }}</div>
+              <img class="poster img-fluid" :src="movies[index].posters[0]" />
+              <div class="imageInfo">{{ movies[index].posterindex }}</div>
 
-              <p class="title">{{ movies[0].title }} ({{ movies[0].country }})</p>
+              <p class="title">{{ movies[index].title }} ({{ movies[index].country }})</p>
               <p class="score">
-                <i class="bi bi-star" aria-hidden="true"></i> {{ movies[0].score }}
+                <i class="bi bi-star" aria-hidden="true"></i> {{ movies[index].score }}
               </p>
-              <p class="runtime">Runtime: {{ movies[0].runtime }}</p>
+              <p class="runtime">Runtime: {{ movies[index].runtime }}</p>
               <p class="released">
-                Released: {{ movies[0].released }} | Rated: {{ movies[0].rated }}
+                Released: {{ movies[index].released }} | Rated: {{ movies[index].rating }}
               </p>
-              <p class="websites">Websites: <a> imdb </a> | <a>website</a></p>
+              <p class="websites"> Websites: <a :href="movies[0].posters[0]" target="_blank"> IMDB</a> | <a v-bind:href="movies[0].website" target="_blank">Website</a></p>
 
               <div class="social">
                 <p class="likes">
                   <i class="bi bi-hand-thumbs-up" aria-hidden="true"></i>
-                  {{ movies[0].likes }}
+                  {{ movies[index].likes }}
                 </p>
                 <p class="dislikes">
-                  <i class="bi bi-hand-thumbs-down"></i> {{ movies[0].dislikes }}
+                  <i class="bi bi-hand-thumbs-down"></i> {{ movies[index].dislikes }}
                 </p>
               </div>
             </div>
@@ -66,7 +66,7 @@
 
       <div class="footer">
         <div class="container">
-          <a id="github" class="btn btn-lg btn-warning" v-bind:href="github"></a>
+          <a id="github" class="btn btn-lg btn-warning" :href="repository" target="_blank"></a>
             <i class="bi bi-github me-2"></i> {{ owner }}
           </a>
         </div>
