@@ -68,5 +68,47 @@
             "likes": 812,
             "dislikes": 101,
             "posterindex": 0
+      },
+      {
+            "title": "Forest Gump",
+            "iscore": 8.8,
+            "rating": "PG-13",
+            "runtime": 103,
+            "released": [1994, 7, 6],
+            "country": "USA",
+            "posters": ["img/forestgump3.jpg", "img/forestgump2.jpg", "img/forestgump1.jpg"],
+            "imdb": "https://www.imdb.com/title/tt0109830/",
+            "website": "https://www.paramountpictures.com/movies/forrest-gump",
+            "likes": 921,
+            "dislikes": 201,
+            "posterindex": 0
+      },
+      {
+            "title": "Clueless",
+            "iscore": 6.9,
+            "rating": "PG-13",
+            "runtime": 97,
+            "released": [1995, 7, 19],
+            "country": "USA",
+            "posters": ["img/clueless2.jpg", "img/clueless1.jpg"],
+            "imdb": "https://www.imdb.com/title/tt0112697/?ref_=fn_all_ttl_1",
+            "website": "https://www.rottentomatoes.com/m/clueless/videos",
+            "likes": 735,
+            "dislikes": 138,
+            "posterindex": 0
+      },
+      {
+            "title": "Rudy",
+            "iscore": 7.5,
+            "rating": "PG",
+            "runtime": 114,
+            "released": [1993, 10, 13],
+            "country": "USA",
+            "posters": ["img/rudy1.jpg", "img/rudy2.jpg"],
+            "imdb": "https://www.imdb.com/title/tt0108002/?ref_=nv_sr_srsg_3_tt_1_nm_7_in_0_q_rudy",
+            "website": "https://www.rudyruettiger.com/",
+            "likes": 769,
+            "dislikes": 109,
+            "posterindex": 0
       }
 ]

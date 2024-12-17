@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>IS219 Gallery (Project 3)</title>
+    <title>Top 10 Movies</title>
 
     <!-- Our CSS File along with Boostrap, and Bootstrap Icon Styles-->
     <link
@@ -35,28 +35,50 @@
 
       <div class="main">
         <div class="row">
-          <div class="col-md-6" v-for="(movie, index) in movies"> 
+          <div class="col-md-6" v-for="(movie, index) in movies">
             <div class="thumbnail">
-              <img class="poster img-fluid" :src="movies[index].posters[0]" />
-              <div class="imageInfo">{{ movies[index].posterindex }}</div>
+              <img
+                class="poster img-fluid"
+                :src="movies[index].posters[movies[index].posterindex]"
+                @click="posterClick(index)"
+                style="height: 700px; width: 500px"
+              />
+              <div class="imageInfo">
+                Poster {{movies[index].posterindex +1}} of
+                {{movies[index].posters.length}}
+              </div>
 
-              <p class="title">{{ movies[index].title }} ({{ movies[index].country }})</p>
+              <p class="title">
+                {{ movies[index].title }} ({{ movies[index].country }})
+              </p>
               <p class="score">
-                <i class="bi bi-star" aria-hidden="true"></i> {{ movies[index].iscore }}
+                <i class="bi bi-star" aria-hidden="true"></i> {{
+                movies[index].iscore }}
               </p>
-              <p class="runtime">Runtime: {{ movies[index].runtime }}</p>
+              <p class="runtime">
+                Runtime: {{ timeText(movies[index].runtime) }}
+              </p>
               <p class="released">
-                Released: {{  getMonthText(movies[index].released) }}  | Rated: {{ movies[index].rating }}
+                Released: {{ getMonthText(movies[index].released) }} | Rated: {{
+                movies[index].rating }}
               </p>
-              <p class="websites"> Websites: <a :href="movies[index].posters[0]" target="_blank"> IMDB</a> | <a v-bind:href="movies[index].website" target="_blank">Website</a></p>
+              <p class="websites">
+                Websites:
+                <a v-bind:href="movies[index].imdb" target="_blank"> IMDB</a>
+                |
+                <a v-bind:href="movies[index].website" target="_blank"
+                  >Website</a
+                >
+              </p>
 
               <div class="social">
                 <p class="likes" @click="movies[index].likes++">
-                  <i class="bi bi-hand-thumbs-up" aria-hidden="true"></i>
-                  {{ movies[index].likes }}
+                  <i class="bi bi-hand-thumbs-up" aria-hidden="true"></i> {{
+                  movies[index].likes }}
                 </p>
-                <p class="dislikes"  @click="movies[index].dislikes++>
-                  <i class="bi bi-hand-thumbs-down"></i> {{ movies[index].dislikes }}
+                <p class="dislikes" @click="movies[index].dislikes++">
+                  <i class="bi bi-hand-thumbs-down"></i> {{
+                  movies[index].dislikes }}
                 </p>
               </div>
             </div>
@@ -66,8 +88,13 @@
 
       <div class="footer">
         <div class="container">
-          <a id="github" class="btn btn-lg btn-warning" :href="repository" target="_blank"></a>
-            <i class="bi bi-github me-2"></i> {{ owner }}
+          <a
+            id="github"
+            class="btn btn-lg btn-warning"
+            v-bind:href="repository"
+            target="_blank"
+          >
+            <i class="bi bi-github me-2"></i>{{ owner }}
           </a>
         </div>
       </div>
